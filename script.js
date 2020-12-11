@@ -4,12 +4,9 @@ var d = new Date();
 $("#currentDay").text(d.toDateString());
 
 $(document).ready(function () {
-
+  // Get current number of hours
+  var h = d.getHours();
   function runTimeBlocks() {
-    // Get current number of hours
-    // Test for h var
-    // var h = 12;
-    var h = d.getHours();
     // Loop checking each time block div according to id#
     $(".time-block").each(function () {
       // The "this" refers to the .time-block class
@@ -35,6 +32,30 @@ $(document).ready(function () {
       }
     })
   }
-  // Function to run the timeBlocks function
+  // Invoke runTimeBlocks function
   runTimeBlocks();
+  // Local Storage: 
+  // saveBtn event listener for click
+  $(".saveBtn").click(function () {
+    // Get values of the parent div
+    var time = $(this).parent().attr("id");
+    // Get values of everything in the textarea and sibling div
+    var text = $(this).siblings(".description").val();
+    // Save text content in local storage after being clicked to save
+    localStorage.setItem(time, text);
+  })
+  // Get descriptions from our Local Storage assigned to their id#
+  $("#h9 .description").val(localStorage.getItem("h9"));
+  $("#h10 .description").val(localStorage.getItem("h10"));
+  $("#h11 .description").val(localStorage.getItem("h11"));
+  $("#h12 .description").val(localStorage.getItem("h12"));
+  $("#h13 .description").val(localStorage.getItem("h13"));
+  $("#h14 .description").val(localStorage.getItem("h14"));
+  $("#h15 .description").val(localStorage.getItem("h15"));
+  $("#h16 .description").val(localStorage.getItem("h16"));
+  $("#h17 .description").val(localStorage.getItem("h17"));
+  $("#h18 .description").val(localStorage.getItem("h18"));
+  $("#h19 .description").val(localStorage.getItem("h19"));
+  $("#h20 .description").val(localStorage.getItem("h20"));
+  $("#h21 .description").val(localStorage.getItem("h21"));
 })

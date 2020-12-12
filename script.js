@@ -19,7 +19,7 @@ $(document).ready(function () {
         $(this).addClass("past");
       }
       // Add the present class if current time is exactly the current timeblock
-      else if (timeBlock === h) {
+      else if (timeBlock == h) {
         $(this).removeClass("past");
         $(this).removeClass("future");
         $(this).addClass("present");

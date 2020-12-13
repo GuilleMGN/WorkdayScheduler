@@ -1,11 +1,11 @@
 // Get current date
-var d = new Date();
+var d = moment().format("dddd, MMM Do YYYY");
 // Output date onto #currentDay
-$("#currentDay").text(d.toDateString());
+$("#currentDay").text(d);
 
 $(document).ready(function () {
   // Get current number of hours
-  var h = d.getHours();
+  var h = moment().hour();
   function runTimeBlocks() {
     // Loop checking each time block div according to id#
     $(".time-block").each(function () {
